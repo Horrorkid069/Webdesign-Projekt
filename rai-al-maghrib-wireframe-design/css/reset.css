@@ -1,0 +1,36 @@
+/* 1. Ebene der CSS-Kaskade: Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+figure {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+img,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+audio,
+video {
+    font: inherit;
+}

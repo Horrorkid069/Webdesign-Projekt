@@ -1,0 +1,99 @@
+/* 2. Ebene der CSS-Kaskade: globale Regeln und Farbwelt */
+:root {
+    --color-ink: #17211f;
+    --color-paper: #f7f1e5;
+    --color-paper-deep: #eee5d3;
+    --color-sand: #d9b36c;
+    --color-sand-soft: #ead3a2;
+    --color-red: #9b2f2f;
+    --color-green: #1f6653;
+    --color-green-deep: #123f34;
+    --color-teal: #2f7f79;
+    --color-white: #ffffff;
+    --color-muted: #5e6864;
+    --color-border: #c9c1b2;
+    --color-dark-border: #42524e;
+
+    --shadow-soft: 0 1rem 2.5rem rgba(23, 33, 31, 0.12);
+    --shadow-strong: 0 1.4rem 3.6rem rgba(8, 18, 16, 0.24);
+
+    --font-display: Georgia, "Times New Roman", serif;
+    --font-body: Arial, Helvetica, sans-serif;
+
+    --content-width: 72rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 20rem;
+    overflow-x: hidden;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--color-green);
+    text-underline-offset: 0.22em;
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--color-red);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+}
+
+h1 {
+    font-size: clamp(3.8rem, 10vw, 8rem);
+    letter-spacing: -0.055em;
+}
+
+h2 {
+    max-width: 18ch;
+    font-size: clamp(2.4rem, 5.6vw, 4.6rem);
+    letter-spacing: -0.035em;
+}
+
+h3 {
+    font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+p + p {
+    margin-top: 1rem;
+}
+
+button,
+.button {
+    min-height: 2.8rem;
+}
+
+:focus-visible {
+    outline: 0.2rem solid var(--color-red);
+    outline-offset: 0.25rem;
+}
+
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -6rem;
+    z-index: 200;
+    padding: 0.8rem 1rem;
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}

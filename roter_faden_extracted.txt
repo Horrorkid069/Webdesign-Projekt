@@ -1,0 +1,656 @@
+                         Webdesign und Standards
+                                  Teil 2
+
+                                                     AI_WS24_IV
+                                                 Dozent: Bernd Kress
+
+
+                     Roter Faden zur kompletten Vorlesung (R21)
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                             1
+ Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Termine
+02.07.2026 , 12:45 - 16:00; 204
+03.07.2026 , 12:45 - 16:00; 204
+08.07.2026 , 12:45 - 16:00; 201
+13.08.2026, 08:30 - 11:45; 201
+19.08.2026 , 08:30 - 11:45; 201
+20.08.2026 , 08:30 - 11:45; 201
+03.09.2026 , 12:45 - 16:00; 201
+11.09.2026 , 08:30 - 11:45; 201
+24.09.2026 , 08:30 - 16:00; Präsentation; 201
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            2
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Die Prüfungsleistung
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            3
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Anforderungen an die Prüfungsleistung [100%]
+Freie Themenwahl, 1 Handout [1 x Print + PDF(im ZIP)]
+Eine Gruppen-Startseite [XHTML, CSS2.1]
+Je Gruppenmitglied eine HTML5-Seite mit CSS3
+    Eigene Ordnerstruktur [Assets, CSS,…]
+    Pflichtelemente: Audio, Video, Canvas-2D, SVG [jew. Selbst erzeugt]
+    PDF [Web] verlinkt (zum Download), selbst erzeugt
+Für Alle Seiten
+    1 x WireFrame [2+ Leitfarben, Bemaßung, Fonts]
+    Semantische Korrektheit [Barriere-Armut]
+    Alle HTML- und CSS-Dokumente valide, CSS-Kaskade erkennbar
+Lieferung: 1 ZIP-Archiv [Gruppenname.zip] 1 Tag vor PL
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            4
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Anforderungen an die Prüfungsleistung
+Je Gruppenmitglied  „Kann-Komponenten“
+    Kann-Elemente: Canvas-3D [selbst erzeugt, incl. Interaktion]
+     natives 3D [VR/AR], SVG,…
+    PDF dynamisch, zur Laufzeit erzeugbar
+    Barrierefreiheit mit expliziten Features [WCAG, Attribute, CSS]
+    @media-Queries
+     [sinnvolle Wahl, z.B. „min-width“, „media-type“]
+
+                       alle Farben                   sollen           bei CSS bleiben
+                        und niet im                             HTML code bleiben
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            5
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML
+Hypertext Markup Language – Historie
+    1989 Erster Entwurf „Tim Berners Lee“
+    1992 Erste Version <a>
+    1994 Netscape Navigator
+    1995 IE
+    1997 (Januar), HTML3.2
+    1997 (Dezember), HTML4
+    2000 XHTML1
+    2009 HTML5  2014  2023 (Plan)
+    2016 HTML5.1
+    2017 HTML5.2… Plan: Jedes Jahr eine kleine Anpassung
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            6
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Erkenntnisse aus der HTML-Geschichte (b)
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            7
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Grundsätzliches Design-Verständnis (a)
+HTML-Boxmodell
+    Positionierung
+    Mehrspaltige Layouts [alle Standards]
+    Floats
+    Design ohne Frameworks und ohne CSS3
+
+ fle.in             css im                        Head                  und keins
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            8
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Das HTML-Boxmodell
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            9
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+XHTML-Elemente und CSS2.1
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            10
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Gruppenbildung für die Präsentationsleistung
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            11
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS-Metriken und –Selektoren | die Kaskade!
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            12
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Grundsätzliches Design-Verständnis (b)
+Metriken
+    px, em, Em, ex, Ex, pt, mm, cm, %,…, rem, vh, …
+
+
+
+
+Kaskade im CSS
+    Selektoren
+    [*, Element, Klasse, ID] [Alle CSS-Standards]
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            13
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Wireframes
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            14
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Digitale Farbe – Ihre Entscheidung…
+CI/CD vorhanden?
+    Bsp. BA
+Eigene Vorlieben…
+    https://colorschemedesigner.com/csd-3.5/
+    https://color.adobe.com/de/create/color-wheel
+Übung…
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            15
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Positionierung von Boxen im Browser
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            16
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS2.1
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            17
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Beurteilung der Übung: Positionierung
+Erstellen Sie auf Basis von XHTML1 und CSS2.1 ein
+ Grundkonzept für die Gruppen-Startseite
+Verwenden Sie für die Platzhalter (Gruppenmitglieder)
+ eine div-Box
+    Platzhalter nebeneinander (Position / Float)
+    Platzhalter untereinander (Position)
+    Platzhalter als „Kreuz“ (Position)
+    Platzhalter frei platziert nach eigenem Gusto
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            18
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Mehrspaltige Layouts mit Float und CSS2.1 [XHTML]
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            19
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Standardkonformität und der Quirks-Mode
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            20
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Immer validieren! (HTML)
+HTML
+    https://validator.w3.org/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            21
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Immer validieren! (CSS)
+CSS - Jigsaw
+    https://jigsaw.w3.org/css-validator/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            22
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Die grundsätzliche Struktur
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            23
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Herausforderungen für XHTML
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            24
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Freiwillige Übung: Counter in Überschriftebenen
+Adaptieren Sie das Counter-Beispiel aus den <ol> auf die
+ Überschriftebenen <h1> und <h2>
+ Bei erfolgreicher Absolvierung erreichen Sie folgendes
+ Ergebnis:
+    1. Ebene eins <h1>
+         1.1 Ebene eins, Unterebene eins <h2>
+
+
+Die Übung muss im Nachgang/Selbststudium erfolgen
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            25
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Das böse Thema „Tabelle“
+Zellenvereinigungen unbedingt meiden
+    Barrierenarmut! Semantik!
+Tabellen ausschließlich für tabellarischen Content nutzen!
+Struktur
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            26
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Abgrenzung der Formular-Input-Komponenten
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            27
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML-Formular-Basics
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            28
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML5-Elemente – Erweiterte Semantik
+Strukturelemente
+    header, nav, aside, article, section…
+Content
+    audio, video, canvas…
+Forms
+    date, time, email, url, range, color, number,…
+Accessibility
+    ARIA
+    Landmark
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            29
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML5 – MEHR Semantik!!!
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            30
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Übung: Seiten-Semantik (HTML5) - Einzelleistung
+Setzen Sie die „eben“ erfahrene Semantik in Ihrer
+ Einzelleistung um…
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            31
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Semantik für Bilder und Infografiken
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            32
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML5-Audio
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            33
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML5-Video
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            34
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Canvas
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            35
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+HTML5-Canvas
+mdn canvas API
+Infografik
+    https://canvasjs.com/
+    https://modeling-languages.com/javascript-drawing-libraries-diagrams/
+    https://www.chartjs.org/
+    http://visjs.org/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            36
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+SVG in HTML5
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            37
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+SVG - API
+SVG 1.1
+SVG tutorial „primer“ W3C
+SVG tutorial „w3schools“
+SVG tutorial „selfhtml“
+SVG und CSS „Animation“
+SVG „Animation-Examples“
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            38
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+SVG++
+SVG-Artikel_WuMDev_2020.pdf  TraiNex
+Online-Editoren
+    MethodDraw
+    Vectr
+Editoren
+    Adobe Illustrator, Affinity Designer, Apache OpenOffice,
+     Aphalina Designer, Corel-DRAW, Inkscape, LibreOffice, Microsoft
+     Visio, PhotoLine, Scribus, SVG-edit und Xara Designer
+Animations-Tools
+    SVGcircus
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            39
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Canvas 3D - API
+API MDN
+WebGL – getting started MDN
+    Doku (khronos)
+Trhee.js; Beispiele
+
+Tutorial
+    HTML53DCanvasTutorial.zip  TraiNex
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            40
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS3
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            41
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS3-Keyfeatures
+Vendor-Präfixe
+Transparenz (nativ, RGBA)
+Web-Fonts (google, squirel)
+Mehrspaltiger Text
+Schatten (Text, Box)
+Farbverläufe (colorzilla)
+Transformation (Rotation, Verzerrung, Verschiebung,…)
+Mehrere Bilder im Hintergrund
+Animation (caesar, easings)
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            42
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Übung „Mehrere Hintergrundbilder“
+Platzieren Sie drei
+ Hintergrundbilder via CSS in
+ einem Container
+Kopf- und Fußgrafik sollen
+ statisch sein
+Die mittlere Grafik soll sich an
+ die Höhe des Containers
+ anpassen
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            43
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Übung „Animation“
+Überlegen Sie, welche dezente Animation die UX Ihrer
+ Einzelleistung aufwerten kann
+Setzen Sie Ihre Entscheidung um
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            44
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS3-MediaQueries
+@media
+Typen
+    all, print, screen, speech
+    embossed, tty, tv
+Bedingungen
+    min-width (Standard)
+    orientation
+    aspect-ratio
+    color-index
+    pointer
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            45
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Spezielle CSS3-Features
+FlexBox    W3C                                                     w3schools
+Grid       W3C                                                     w3schools
+Neue Selektoren
+Neue Frameworks
+CSS3-Animation
+3D via WebGL, JS
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            46
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Display Grid und Flex ändern das Box-Verständnis…
+Flex: horizontal ODER vertikal
+Grid: kollossal…  https://grid.layoutit.com/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            47
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS3-Links
+CanIuse
+https://css3playground.com/
+https://css-tricks.com/snippets/
+https://css3generator.com/
+http://www.css3-generator.de/
+https://www.css3maker.com/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            48
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+CSS-Frameworks
+ZENGarden
+ Bootstrap
+ Bulma
+ Materialize CSS
+ Semantic UI
+ Material UI
+ UIKit
+ Foundation                                                          Milligram
+ Susy                                                                Baseguide
+ Pure                                                                Siimple
+ Skeleton                                                            sculpt
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            49
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+JS-Frameworks (aktuelle Trends)
+WuM_Web-Tuning_mit_JavaScript.pdf
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            50
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Design-Trends 2017
+Gestaltung + Entwicklung
+    Mobile First  „Complexion Reduction Design“
+    Graceful degradation (Im Sinne von „Content First“)
+    Material Design  Rastered Content
+    Antizipatorisches Design
+         Nutzer-Mehrwert steht zur Verfügung, bevor der Nutzer danach sucht!
+    Age responsive design  z. B. altersabhängige Navigation++
+ Design und Funktionalität müssen zusammenspielen!
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            51
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Design-Trends 2018
+Flat Design []
+Anpassungsfähige Schrift {calc…}
+Aussagekräftige Icons
+Farbe des Jahres: Violett | colorschemedesigner…
+3D-Elemente [2,5D]
+CSS: grid-row:…, object-fit,
+ grid-auto-rows: 50px;
+JS-CleanCode [SOLID]
+Auftragsdatenverarbeitung [EU-DSGVO]
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            52
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Design-Trends 2019
+CSS  Metrik „vh“ [z.B. 100vh;], minmax(…);
+CSS  min-content; max-content;
+ fit-content; box-sizing:…; flex:…;
+Mobile First [Farbe, Geometrie, less content]
+Realistische Illustration [Anti-Stock-Phots]
+Rasterlayouts [Grids], Minimalismus
+Dynamic Pattern & Backgrounds [Video-BG]
+Parallax, Mikrointeraktion  minimale UI-Veränderungen
+AR-Content++, Progressive JPEG, KeyVisuals First
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            53
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Design-Trends
+Liquid Abstract | Guilloche-Vectors
+All Ages Welcome (Bsp. Ikea)
+Art déco-Muster | Surrealism
+Handmade Humanism | Vectors
+Neumorphism  Editor
+Material Design [ungebrochen!]
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            54
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+Design-Trends 2023++
+Abstrakte psychedelische Kunst
+Retro Futurismus
+Nahtloser Surrealismus
+Authentizität
+Freche Charaktere – Comics – Pop Art
+Die schönen Künste
+Farbunschärfe
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            55
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+VR – Virtual Reality
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            56
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+AR – Augmented Reality
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            57
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+EPUB 2
+EPUB Specifications and Projects
+    http://www.idpf.org/epub/dir/
+
+
+
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            58
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+EPUB 3
+HTML5
+CSS3
+JS
+Fonts [EULA!]
+Audio
+Video
+Volle Kontrolle über das Layout
+App-ähnliches Verhalten durch JS
+
+©2026, Bernd Kress, Berufsakademie Rhein-Main GmbH
+                                                                                                                                            59
+Aufzeichnungen und Veröffentlichungen der urheberrechtlich geschützten Folien sowie Foto-, Audio- und Filmaufnahmen sind nicht gestattet.
+
