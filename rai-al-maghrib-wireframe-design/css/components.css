@@ -228,6 +228,19 @@
     margin-top: 1.15rem;
 }
 
+.audio-card__canvas {
+    display: block;
+    width: 100%;
+    height: 120px;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    background: var(--color-paper);
+    border: 2px solid red;
+    border-radius: 0.75rem;
+}
+
 .audio-card details,
 .video-card details {
     position: relative;
@@ -243,35 +256,24 @@
     font-weight: 700;
 }
 
-.pulse-card {
-    position: relative;
+.album-card {
     overflow: hidden;
-    align-self: stretch;
-    padding: 1.4rem;
-    background: var(--color-ink);
-    color: var(--color-white);
+    margin: 0;
+    background: var(--color-white);
     box-shadow: var(--shadow-strong);
 }
 
-.pulse-card__copy {
-    position: relative;
-    z-index: 2;
-    max-width: 28rem;
-}
-
-.pulse-card .media-kicker {
-    color: var(--color-sand);
-}
-
-.pulse-card p:last-child {
-    margin-top: 0.6rem;
-    color: var(--color-paper-deep);
-}
-
-#rai-pulse {
+.album-card img {
+    display: block;
     width: 100%;
-    margin-top: 1.4rem;
-    background: var(--color-ink);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.album-card figcaption {
+    padding: 0.9rem 1rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
 }
 
 .button {

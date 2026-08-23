@@ -67,43 +67,44 @@
                             </div>
                             <span class="audio-mark" aria-hidden="true">♪</span>
                         </div>
-
-                        <audio controls preload="metadata">
-                            <source src="assets/audio/rai-demo.wav" type="audio/wav">
+    <!-- AUDIO -->
+                        <audio id="raiAudio" controls preload="metadata">
+                        <source src="assets/audio/cest_toi_que_jaime.wav" type="audio/mpeg">
+                        <source src="assets/audio/cest_toi_que_jaime.ogg" type="audio/ogg">
+                        <source src="assets/audio/cest_toi_que_jaime.mp3" type="audio/wav">
                             Ihr Browser unterstützt das Audio-Element nicht.
                         </audio>
+    <!-- AUDIO/ -->
+    <!-- CANVAS -->
 
-                        <details>
+                        <canvas
+                            id="audioCanvas"
+                            width="800"
+                            height="120"
+                            aria-label="Visualisierung der Audio von C’est toi que j’aime">
+                            Ihr Browser unterstützt das Canvas-Element nicht.
+                        </canvas>
+    <!-- CANVAS/ -->
+
+                        <details class="audio-description" open>
                             <summary>Beschreibung / Transkript</summary>
                             <p>
-                                HIER BESCHREIBUNG ODER TRANSKRIPT DEINES EIGENEN AUDIOS EINFÜGEN.
+                            „C’est toi que j’aime“ von Cheb Amrou erzählt von einer lange zurückgehaltenen Liebe. Der Song beschreibt den Moment, in dem die eigenen Gefühle schließlich offen ausgesprochen werden – direkt, emotional und voller Sehnsucht. Und das ist was die Musik des Raï ausmacht!
                             </p>
                         </details>
                     </article>
                 </div>
-
-                <aside class="pulse-card" aria-labelledby="pulse-title">
-                    <div class="pulse-card__copy">
-                        <p class="media-kicker">Canvas 2D</p>
-                        <h3 id="pulse-title">Der Raï-Puls</h3>
-                        <p>
-                            Das selbst programmierte Canvas visualisiert Rhythmus als
-                            kreisförmige Schallwellen.
-                        </p>
-                    </div>
-
-                    <canvas
-                        id="rai-pulse"
-                        width="620"
-                        height="430"
-                        aria-label="Animierte Kreiswellen als Darstellung eines musikalischen Pulses">
-                        Stilisierte Kreiswellen zeigen einen musikalischen Puls.
-                    </canvas>
-
-                    <button id="pulse-toggle" class="button" type="button" aria-pressed="false">
-                        Animation starten
-                    </button>
-                </aside>
+    <!-- AlbumCover -->
+                <figure class="album-card">
+                    <img
+                        src="assets/images/cest_toi_que_jaime-cover.jpg"
+                        alt="Albumcover von C’est toi que j’aime von Cheb Amrou"
+                    >
+                    <figcaption>
+                        C’est toi que j’aime – Cheb Amrou
+                    </figcaption>
+                </figure>
+    <!-- AlbumCover/ -->
             </div>
         </section>
 

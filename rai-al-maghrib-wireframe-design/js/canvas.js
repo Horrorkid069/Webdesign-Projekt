@@ -1,102 +1,113 @@
-(() => {
-    "use strict";
+const audio = document.getElementById("raiAudio");
+const canvas = document.getElementById("audioCanvas");
+const ctx = canvas.getContext("2d");
 
-    const canvas = document.getElementById("rai-pulse");
-    const button = document.getElementById("pulse-toggle");
+let audioContext;
+let analyser;
+let source;
+let dataArray;
+let visualizerGestartet = false;
 
-    if (!(canvas instanceof HTMLCanvasElement) || !(button instanceof HTMLButtonElement)) {
-        return;
+
+// Canvas schon vor dem Start sichtbar machen
+ctx.fillStyle = "#f3f0e8";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+audio.addEventListener("play", async function () {
+
+    if (!audioContext) {
+
+        audioContext = new AudioContext();
+
+        // Audio-Player als Audioquelle
+        source = audioContext.createMediaElementSource(audio);
+
+        // Analyser erstellen
+        analyser = audioContext.createAnalyser();
+
+        analyser.fftSize = 256;
+
+        const bufferLength = analyser.frequencyBinCount;
+
+        dataArray = new Uint8Array(bufferLength);
+
+
+        /*
+         * WICHTIG:
+         *
+         * Audio direkt an Lautsprecher senden
+         */
+        source.connect(audioContext.destination);
+
+
+        /*
+         * Gleichzeitig Audio an den Analyser senden
+         */
+        source.connect(analyser);
     }
 
-    const context = canvas.getContext("2d");
-    if (!context) {
-        return;
+
+    // AudioContext aktivieren
+    if (audioContext.state === "suspended") {
+        await audioContext.resume();
     }
 
-    const css = getComputedStyle(document.documentElement);
-    const colors = {
-        background: css.getPropertyValue("--color-ink").trim(),
-        sand: css.getPropertyValue("--color-sand").trim(),
-        red: css.getPropertyValue("--color-red").trim(),
-        teal: css.getPropertyValue("--color-teal").trim(),
-        paper: css.getPropertyValue("--color-paper").trim()
-    };
 
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let running = false;
-    let animationFrame = 0;
-    let startTime = 0;
-
-    function draw(time = 0) {
-        const width = canvas.width;
-        const height = canvas.height;
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const elapsed = (time - startTime) / 1000;
-
-        context.fillStyle = colors.background;
-        context.fillRect(0, 0, width, height);
-
-        const waves = [
-            { speed: 54, offset: 0, color: colors.sand, width: 8 },
-            { speed: 54, offset: 48, color: colors.teal, width: 6 },
-            { speed: 54, offset: 96, color: colors.red, width: 4 }
-        ];
-
-        waves.forEach((wave) => {
-            const radius = 44 + ((elapsed * wave.speed + wave.offset) % 165);
-            const opacity = 1 - ((radius - 44) / 165);
-
-            context.beginPath();
-            context.arc(centerX, centerY, radius, 0, Math.PI * 2);
-            context.strokeStyle = wave.color;
-            context.globalAlpha = Math.max(0.14, opacity);
-            context.lineWidth = wave.width;
-            context.stroke();
-        });
-
-        context.globalAlpha = 1;
-        context.beginPath();
-        context.arc(centerX, centerY, 32, 0, Math.PI * 2);
-        context.fillStyle = colors.paper;
-        context.fill();
-
-        context.fillStyle = colors.background;
-        context.font = "700 23px Arial, sans-serif";
-        context.textAlign = "center";
-        context.textBaseline = "middle";
-        context.fillText("RAÏ", centerX, centerY + 1);
-
-        context.fillStyle = colors.paper;
-        context.font = "16px Arial, sans-serif";
-        context.fillText("Rhythmus · Stimme · Bewegung", centerX, height - 34);
-
-        if (running) {
-            animationFrame = window.requestAnimationFrame(draw);
-        }
+    if (!visualizerGestartet) {
+        visualizerGestartet = true;
+        zeichneVisualizer();
     }
 
-    function updateButton() {
-        button.textContent = running ? "Animation anhalten" : "Animation starten";
-        button.setAttribute("aria-pressed", String(running));
+});
+
+
+function zeichneVisualizer() {
+
+    requestAnimationFrame(zeichneVisualizer);
+
+    analyser.getByteFrequencyData(dataArray);
+
+
+    // Canvas löschen
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    // Hintergrund
+    ctx.fillStyle = "#f3f0e8";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    const barWidth =
+        (canvas.width / dataArray.length) * 1.7;
+
+    let x = 0;
+
+
+    for (let i = 0; i < dataArray.length; i++) {
+
+        const barHeight = dataArray[i] * 0.4;
+
+        ctx.fillStyle = "#9d2d2d";
+
+        ctx.fillRect(
+            x,
+            canvas.height - barHeight,
+            barWidth,
+            barHeight
+        );
+
+        x += barWidth + 2;
     }
-
-    button.addEventListener("click", () => {
-        running = !running;
-        updateButton();
-
-        if (running) {
-            startTime = performance.now();
-            animationFrame = window.requestAnimationFrame(draw);
-        } else {
-            window.cancelAnimationFrame(animationFrame);
-        }
-    });
-
-    if (reduceMotion) {
-        button.disabled = true;
-        button.textContent = "Animation wegen Bewegungseinstellung deaktiviert";
-    }
-
-    draw(0);
-})();
+}
