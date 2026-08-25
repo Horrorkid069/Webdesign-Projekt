@@ -361,8 +361,7 @@
 /* 03 AMAZIGH ------------------------------------------------------- */
 .section--amazigh {
     background:
-        radial-gradient(circle at 94% 88%, rgba(47, 127, 121, 0.12), transparent 25%),
-        var(--color-paper);
+        #c9b898;
 }
 
 .amazigh-grid {
