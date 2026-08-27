@@ -1,30 +1,59 @@
-/* 3. Ebene der CSS-Kaskade: Komponenten und Layout */
+/* ============================================================= */
+/* 3. Ebene der CSS-Kaskade: Komponenten und Layout              */
+/* ============================================================= */
 
-/* HERO ------------------------------------------------------------- */
+
+/* ============================================================= */
+/* HERO                                                          */
+/* ============================================================= */
+
 .site-header {
     position: relative;
     overflow: hidden;
+
     padding: 1.25rem;
+
     background:
-        radial-gradient(circle at 82% 14%, rgba(217, 179, 108, 0.58), transparent 24%),
-        radial-gradient(circle at 92% 74%, rgba(47, 127, 121, 0.28), transparent 19%),
-        linear-gradient(145deg, var(--color-green), var(--color-ink) 72%);
+        radial-gradient(
+            circle at 82% 14%,
+            rgba(217, 179, 108, 0.58),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 74%,
+            rgba(47, 127, 121, 0.28),
+            transparent 19%
+        ),
+        linear-gradient(
+            145deg,
+            var(--color-green),
+            var(--color-ink) 72%
+        );
+
     color: var(--color-white);
 }
+
 
 .site-header__inner,
 .main-nav,
 .section,
 .site-footer {
     width: min(100%, var(--content-width));
+
     margin-inline: auto;
 }
 
+
 .site-header__inner {
     position: relative;
+
     z-index: 2;
-    padding-block: clamp(5rem, 13vw, 10rem) clamp(3.8rem, 8vw, 6rem);
+
+    padding-block:
+        clamp(5rem, 13vw, 10rem)
+        clamp(3.8rem, 8vw, 6rem);
 }
+
 
 .eyebrow,
 .section-kicker,
@@ -32,204 +61,320 @@
 .placeholder-label {
     font-size: 0.78rem;
     font-weight: 700;
+
     letter-spacing: 0.17em;
+
     text-transform: uppercase;
 }
 
+
 .eyebrow {
     margin-bottom: 0.75rem;
+
     color: var(--color-sand);
 }
 
+
 .lead {
     max-width: 44rem;
+
     margin-top: 1.4rem;
+
     color: var(--color-paper);
+
     font-family: var(--font-display);
     font-size: clamp(1.25rem, 2.7vw, 1.8rem);
 }
 
+
 .hero-decoration {
     position: absolute;
+
     inset: 0;
+
     pointer-events: none;
 }
 
+
 .hero-ring {
     position: absolute;
+
     border: 1.1rem solid rgba(247, 241, 229, 0.08);
+
     border-radius: 50%;
 }
+
 
 .hero-ring--one {
     width: 26rem;
     height: 26rem;
+
     right: -6rem;
     top: -4rem;
 }
 
+
 .hero-ring--two {
     width: 19rem;
     height: 19rem;
+
     right: 4rem;
     top: 4rem;
+
     border-color: rgba(217, 179, 108, 0.13);
 }
+
 
 .hero-ring--three {
     width: 12rem;
     height: 12rem;
+
     right: 13rem;
     top: 12rem;
+
     border-color: rgba(155, 47, 47, 0.16);
 }
 
-/* NAV -------------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* NAVIGATION                                                    */
+/* ============================================================= */
+
 .main-nav {
     position: relative;
+
     z-index: 3;
-    border-top: 0.0625rem solid rgba(255, 255, 255, 0.32);
+
+    border-top:
+        0.0625rem solid rgba(255, 255, 255, 0.32);
 }
+
 
 .main-nav ul {
     display: grid;
+
     grid-template-columns: 1fr;
 }
 
+
 .main-nav li + li {
-    border-top: 0.0625rem solid rgba(255, 255, 255, 0.2);
+    border-top:
+        0.0625rem solid rgba(255, 255, 255, 0.2);
 }
+
 
 .main-nav a {
     display: block;
+
     padding: 1rem 0.5rem;
+
     color: var(--color-white);
+
     font-weight: 700;
+
     text-align: center;
+
     text-decoration-thickness: 0.08rem;
 }
+
 
 .main-nav a:hover,
 .main-nav a:focus-visible {
     color: var(--color-sand);
 }
 
-/* SHARED SECTION SYSTEM -------------------------------------------- */
+
+
+/* ============================================================= */
+/* ALLGEMEINE SECTION-ELEMENTE                                   */
+/* ============================================================= */
+
 .section {
     position: relative;
-    padding: clamp(4.5rem, 8vw, 7rem) 1.25rem;
-    border-bottom: 0.0625rem solid var(--color-border);
+
+    padding:
+        clamp(4.5rem, 8vw, 7rem)
+        1.25rem;
+
+    border-bottom:
+        0.0625rem solid var(--color-border);
 }
 
+
 .section-heading {
-    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom:
+        clamp(2.5rem, 5vw, 4rem);
 }
+
 
 .section-kicker {
     margin-bottom: 0.7rem;
+
     color: var(--color-red);
 }
+
 
 .section-heading--light .section-kicker,
 .section--marokko .media-kicker {
     color: var(--color-sand);
 }
 
+
 .section-heading--light h2 {
     color: var(--color-white);
 }
 
+
 .placeholder-label {
     margin-bottom: 1rem;
+
     color: var(--color-red);
 }
 
+
 .media-kicker {
     margin-bottom: 0.4rem;
+
     color: var(--color-green);
 }
 
+
 .text-slot {
     max-width: 43rem;
+
     color: var(--color-muted);
-    font-size: clamp(1.04rem, 1.8vw, 1.18rem);
+
+    font-size:
+        clamp(1.04rem, 1.8vw, 1.18rem);
 }
+
 
 .text-slot--wide {
     max-width: 49rem;
 }
 
+
 .text-slot--dark {
     color: var(--color-ink);
 }
 
-/* 01 RAÏ ----------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* 01 RAÏ                                                        */
+/* ============================================================= */
+
 .section--rai {
     background:
-        radial-gradient(circle at 8% 100%, rgba(217, 179, 108, 0.18), transparent 25%),
+        radial-gradient(
+            circle at 8% 100%,
+            rgba(217, 179, 108, 0.18),
+            transparent 25%
+        ),
         var(--color-paper);
 }
 
+
 .rai-layout {
     display: grid;
+
     gap: 2rem;
 }
+
 
 .editorial-copy {
     align-self: center;
 }
 
+
+
+/* AUDIO -------------------------------------------------------- */
+
 .audio-card {
     position: relative;
+
     overflow: hidden;
+
     max-width: 39rem;
+
     margin-top: 2.3rem;
+
     padding: 1.4rem;
+
     background: var(--color-white);
-    border-top: 0.34rem solid var(--color-red);
+
+    border-top:
+        0.34rem solid var(--color-red);
+
     box-shadow: var(--shadow-soft);
 }
 
+
 .audio-card::after {
     position: absolute;
+
     right: -3.2rem;
     bottom: -3.8rem;
+
     width: 8rem;
     height: 8rem;
-    border: 0.9rem solid rgba(31, 102, 83, 0.08);
+
+    border:
+        0.9rem solid rgba(31, 102, 83, 0.08);
+
     border-radius: 50%;
+
     content: "";
 }
+
 
 .audio-card__top,
 .video-card__heading {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
+
     gap: 1rem;
 }
+
 
 .audio-mark,
 .video-mark {
     display: grid;
+
     flex: 0 0 auto;
+
     width: 3.4rem;
     height: 3.4rem;
+
     place-items: center;
+
     border-radius: 50%;
+
     background: var(--color-paper);
+
     color: var(--color-red);
+
     font-size: 1.45rem;
     font-weight: 700;
 }
 
+
 .audio-card audio {
     width: 100%;
+
     margin-top: 1.15rem;
 }
 
-.audio-card__canvas {
+
+
+/* CANVAS ------------------------------------------------------- */
+
+#audioCanvas {
     display: block;
+
     width: 100%;
     height: 120px;
 
@@ -237,175 +382,295 @@
     margin-bottom: 1rem;
 
     background: var(--color-paper);
+
     border-radius: 0.75rem;
 }
+
+
+
+/* AUDIO BESCHREIBUNG ------------------------------------------ */
 
 .audio-card details,
 .video-card details {
     position: relative;
+
     z-index: 2;
+
     margin-top: 0.9rem;
+
     color: var(--color-muted);
 }
+
 
 .audio-card summary,
 .video-card summary {
     cursor: pointer;
+
     color: var(--color-green);
+
     font-weight: 700;
 }
+
+
+
+/* ALBUM ------------------------------------------------------- */
 
 .album-card {
     overflow: hidden;
+
     margin: 0;
+
     background: var(--color-white);
+
     box-shadow: var(--shadow-strong);
 }
 
+
 .album-card img {
     display: block;
+
     width: 100%;
+
     aspect-ratio: 1 / 1;
+
     object-fit: cover;
 }
 
+
 .album-card figcaption {
     padding: 0.9rem 1rem;
+
     color: var(--color-muted);
+
     font-size: 0.9rem;
 }
 
+
+
+/* BUTTONS ----------------------------------------------------- */
+
 .button {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
     margin-top: 1.2rem;
+
     padding: 0.75rem 1.15rem;
-    border: 0.125rem solid var(--color-green);
+
+    border:
+        0.125rem solid var(--color-green);
+
     border-radius: 999px;
+
     background: var(--color-green);
+
     color: var(--color-white);
+
     font-weight: 700;
+
     text-decoration: none;
+
     cursor: pointer;
 }
+
 
 .button:hover,
 .button:focus-visible {
     border-color: var(--color-red);
+
     background: var(--color-red);
+
     color: var(--color-white);
 }
 
-/* 02 MAROKKO ------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* 02 MAROKKO                                                    */
+/* ============================================================= */
+
 .section--marokko {
     width: 100%;
+
     max-width: none;
-    padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2 + 1.25rem));
+
+    padding-inline:
+        max(
+            1.25rem,
+            calc(
+                (100vw - var(--content-width)) / 2
+                + 1.25rem
+            )
+        );
+
     background:
-        radial-gradient(circle at 15% 20%, rgba(217, 179, 108, 0.14), transparent 18%),
-        linear-gradient(150deg, var(--color-ink), var(--color-green-deep));
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(217, 179, 108, 0.14),
+            transparent 18%
+        ),
+        linear-gradient(
+            150deg,
+            var(--color-ink),
+            var(--color-green-deep)
+        );
+
     color: var(--color-white);
-    border-bottom-color: var(--color-dark-border);
+
+    border-bottom-color:
+        var(--color-dark-border);
 }
+
 
 .marokko-grid {
     display: grid;
+
     gap: 1.25rem;
+
     align-items: stretch;
 }
+
 
 .photo-card,
 .story-card,
 .video-card,
 .editorial-panel {
     background: var(--color-white);
+
     color: var(--color-ink);
+
     box-shadow: var(--shadow-strong);
 }
+
 
 .photo-card {
     overflow: hidden;
 }
 
+
 .photo-card img {
     width: 100%;
     height: 100%;
+
     min-height: 18rem;
+
     object-fit: cover;
 }
 
+
 .photo-card figcaption {
-    padding: 0.75rem 1rem 1rem;
+    padding:
+        0.75rem
+        1rem
+        1rem;
+
     color: var(--color-muted);
+
     font-size: 0.9rem;
 }
 
+
 .story-card {
     position: relative;
+
     overflow: hidden;
-    padding: clamp(1.6rem, 3vw, 2.5rem);
+
+    padding:
+        clamp(1.6rem, 3vw, 2.5rem);
 }
+
 
 .story-card::after {
     position: absolute;
+
     right: -4rem;
     bottom: -4rem;
+
     width: 11rem;
     height: 11rem;
-    border: 1.15rem solid rgba(217, 179, 108, 0.15);
+
+    border:
+        1.15rem solid rgba(217, 179, 108, 0.15);
+
     border-radius: 50%;
+
     content: "";
 }
 
-/* 03 AMAZIGH ------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* 03 AMAZIGH                                                    */
+/* ============================================================= */
+
 .section--amazigh {
-    background:
-        #c9b898;
+    background: #c9b898;
 }
+
 
 .amazigh-grid {
     display: grid;
+
     gap: 2rem;
 }
 
-.editorial-panel {
-    align-self: center;
-    padding: clamp(1.5rem, 3vw, 2.4rem);
-    border-top: 0.35rem solid var(--color-green);
-    box-shadow: var(--shadow-soft);
+
+.amazigh-copy {
+    align-self: start;
 }
+
+
+.amazigh-media {
+    align-self: start;
+}
+
 
 .video-card {
     align-self: start;
-    padding: 1rem;
-    border-top: 0.35rem solid var(--color-sand);
+
     width: 100%;
+
+    padding: 1rem;
+
+    border-top:
+        0.35rem solid var(--color-sand);
 }
+
 
 .video-card video {
     width: 100%;
+
     margin-top: 1rem;
 }
+
+
+
+/* AMAZIGH AUDIO ----------------------------------------------- */
 
 .audio-box {
     position: relative;
 
     margin-top: 2rem;
+
     padding: 1.4rem;
 
     background: var(--color-white);
 
-    border-top: 0.35rem solid var(--color-red);
+    border-top:
+        0.35rem solid var(--color-red);
 
     box-shadow: var(--shadow-soft);
 }
+
 
 .audio-box__text {
     margin-top: 0.75rem;
 
     color: var(--color-muted);
 }
+
 
 .audio-box__player {
     display: block;
@@ -414,166 +679,291 @@
 
     margin-top: 1rem;
 }
-/* 04 MIGRATION ----------------------------------------------------- */
+
+
+
+/* ============================================================= */
+/* 04 MIGRATION                                                  */
+/* ============================================================= */
+
 .section--migration {
     background:
-        linear-gradient(135deg, rgba(217, 179, 108, 0.28), transparent 44%),
+        linear-gradient(
+            135deg,
+            rgba(217, 179, 108, 0.28),
+            transparent 44%
+        ),
         var(--color-paper-deep);
 }
 
+
 .migration-layout {
     display: grid;
+
     gap: 2.3rem;
+
     align-items: center;
 }
+
 
 .section-heading--migration {
     margin-bottom: 2rem;
 }
 
-/* DOWNLOAD --------------------------------------------------------- */
+
+
+/* SVG-FLAGGEN -------------------------------------------------- */
+
+.identity-pairs {
+    display: grid;
+
+    gap: 3rem;
+}
+
+
+.identity-pair {
+    display: grid;
+
+    gap: 2rem;
+
+    align-items: center;
+}
+
+
+.identity-flag {
+    margin: 0;
+}
+
+
+.identity-flag img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+.identity-flag img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+
+/* ============================================================= */
+/* PDF DOWNLOAD                                                  */
+/* ============================================================= */
+
 .section--download {
     display: grid;
+
     gap: 2rem;
+
     align-items: center;
+
     background:
-        radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.22), transparent 24%),
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(255, 255, 255, 0.22),
+            transparent 24%
+        ),
         var(--color-sand);
+
     border-bottom: 0;
 }
+
 
 .section--download .section-kicker {
     color: var(--color-green-deep);
 }
 
+
 .section--download p:last-child {
     max-width: 45rem;
+
     margin-top: 0.8rem;
+
     color: var(--color-ink);
 }
 
+
 .button--download {
     margin-top: 0;
+
     border-color: var(--color-ink);
+
     background: var(--color-ink);
 }
 
-/* FOOTER ----------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* FOOTER                                                        */
+/* ============================================================= */
+
 .site-footer {
     display: flex;
+
     flex-wrap: wrap;
+
     justify-content: space-between;
+
     gap: 1rem;
+
     padding: 2rem 1.25rem;
+
     background: var(--color-ink);
+
     color: var(--color-paper-deep);
+
     font-size: 0.92rem;
 }
+
 
 .site-footer a {
     color: var(--color-sand);
 }
 
-/* RESPONSIVE ------------------------------------------------------- */
+
+
+/* ============================================================= */
+/* RESPONSIVE                                                    */
+/* ============================================================= */
+
 @media screen and (min-width: 48rem) {
+
     .site-header,
     .section {
         padding-inline: 2rem;
     }
 
-    .main-nav ul {
-        grid-template-columns: repeat(4, 1fr);
+    .identity-pair {
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(20rem, 0.85fr);
     }
+    /* Navigation */
+
+    .main-nav ul {
+        grid-template-columns:
+            repeat(4, 1fr);
+    }
+
 
     .main-nav li + li {
         border-top: 0;
-        border-left: 0.0625rem solid rgba(255, 255, 255, 0.2);
+
+        border-left:
+            0.0625rem solid
+            rgba(255, 255, 255, 0.2);
     }
 
+
+
+    /* Raï */
+
     .rai-layout {
-        grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr);
+        grid-template-columns:
+            minmax(0, 1.15fr)
+            minmax(19rem, 0.85fr);
+
         align-items: start;
     }
+
 
     .editorial-copy {
         grid-column: 1 / -1;
     }
 
+
     .audio-card {
         grid-column: 1;
-        margin-top: 0;
-        max-width: none;
+
         width: 100%;
+        max-width: none;
+
+        margin-top: 0;
     }
+
 
     .album-card {
         grid-column: 2;
     }
 
-    .rai-layout {
-        grid-template-columns: minmax(0, 1.15fr) minmax(19rem, 0.85fr);
-        align-items: start;
-    }
 
-    .editorial-copy {
-        grid-column: 1 / -1;
-    }
 
-    .audio-card {
-        grid-column: 1;
-        margin-top: 0;
-        max-width: none;
-        width: 100%;
-    }
-
-    .album-card {
-        grid-column: 2;
-    }
+    /* Marokko */
 
     .marokko-grid {
-        grid-template-columns: minmax(11rem, 0.72fr) minmax(20rem, 1.35fr) minmax(11rem, 0.72fr);
+        grid-template-columns:
+            minmax(11rem, 0.72fr)
+            minmax(20rem, 1.35fr)
+            minmax(11rem, 0.72fr);
     }
 
+
+
+    /* Amazigh */
+
     .amazigh-grid {
-        grid-template-columns: minmax(0, 0.9fr) minmax(22rem, 1.1fr);
+        grid-template-columns:
+            minmax(0, 0.9fr)
+            minmax(22rem, 1.1fr);
+
         align-items: start;
     }
 
+
     .amazigh-media .audio-box {
-    margin-top: 0;
+        margin-top: 0;
     }
 
-    .migration-layout {
-        grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
-    }
+
+
+    /* Download */
 
     .section--download {
-        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-columns:
+            minmax(0, 1fr)
+            auto;
     }
 }
 
+
+
+/* ============================================================= */
+/* GROẞE DESKTOPS                                                */
+/* ============================================================= */
+
 @media screen and (min-width: 70rem) {
+
     .photo-card--left {
         transform: translateY(2rem);
     }
 
-    .photo-card--right {
-        transform: translateY(-1rem);
-    }
-    
+
     .video-card {
         grid-column: 1 / -1;
+
         width: 100%;
     }
+
 }
+/* ============================================================= */
+/* BARRIEREARME BEWEGUNG                                        */
+/* ============================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     html {
         scroll-behavior: auto;
     }
 
-    .photo-card--left,
-    .photo-card--right {
+
+    .photo-card--left {
         transform: none;
     }
+
 }
