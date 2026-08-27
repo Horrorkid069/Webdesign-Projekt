@@ -431,60 +431,6 @@
     margin-bottom: 2rem;
 }
 
-.identity-figure {
-    padding: 1rem;
-    background: var(--color-white);
-    border: 0.0625rem solid var(--color-border);
-    box-shadow: var(--shadow-soft);
-}
-
-.identity-figure figcaption {
-    margin-top: 0.7rem;
-    color: var(--color-muted);
-    font-size: 0.9rem;
-}
-
-.identity-gate rect {
-    fill: var(--color-paper);
-    stroke-width: 10;
-}
-
-.identity-gate path {
-    fill: none;
-    stroke-linecap: round;
-    stroke-width: 10;
-}
-
-.identity-gate--left rect,
-.identity-gate--left path {
-    stroke: var(--color-green);
-}
-
-.identity-gate--right rect,
-.identity-gate--right path {
-    stroke: var(--color-red);
-}
-
-.identity-wave {
-    fill: none;
-    stroke-linecap: round;
-}
-
-.identity-wave--one {
-    stroke: var(--color-sand);
-    stroke-width: 15;
-}
-
-.identity-wave--two {
-    stroke: var(--color-teal);
-    stroke-width: 10;
-}
-
-.identity-wave--three {
-    stroke: var(--color-red);
-    stroke-width: 6;
-}
-
 /* DOWNLOAD --------------------------------------------------------- */
 .section--download {
     display: grid;
