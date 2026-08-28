@@ -35,9 +35,6 @@
     .story-card,
     .video-card,
     .editorial-panel,
-    .identity-figure {
-        box-shadow: none;
-    }
 
     a {
         color: #000000;
