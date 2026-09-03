@@ -175,7 +175,7 @@
 
     text-align: center;
 
-    text-decoration-thickness: 0.08rem;
+    text-decoration: none;
 }
 
 
@@ -255,12 +255,6 @@
 }
 
 
-.text-slot--dark {
-    color: var(--color-ink);
-}
-
-
-
 /* ============================================================= */
 /* 01 RAÏ                                                        */
 /* ============================================================= */
@@ -304,9 +298,6 @@
 
     background: var(--color-white);
 
-    border-top:
-        0.34rem solid var(--color-red);
-
     box-shadow: var(--shadow-soft);
 }
 
@@ -339,36 +330,11 @@
     gap: 1rem;
 }
 
-
-.audio-mark,
-.video-mark {
-    display: grid;
-
-    flex: 0 0 auto;
-
-    width: 3.4rem;
-    height: 3.4rem;
-
-    place-items: center;
-
-    border-radius: 50%;
-
-    background: var(--color-paper);
-
-    color: var(--color-red);
-
-    font-size: 1.45rem;
-    font-weight: 700;
-}
-
-
 .audio-card audio {
     width: 100%;
 
     margin-top: 1.15rem;
 }
-
-
 
 /* CANVAS ------------------------------------------------------- */
 
@@ -444,9 +410,6 @@
 
     font-size: 0.9rem;
 }
-
-
-
 /* BUTTONS ----------------------------------------------------- */
 
 .button {
@@ -490,21 +453,7 @@
 /* ============================================================= */
 /* 02 MAROKKO                                                    */
 /* ============================================================= */
-
 .section--marokko {
-    width: 100%;
-
-    max-width: none;
-
-    padding-inline:
-        max(
-            1.25rem,
-            calc(
-                (100vw - var(--content-width)) / 2
-                + 1.25rem
-            )
-        );
-
     background:
         radial-gradient(
             circle at 15% 20%,
@@ -527,40 +476,53 @@
 .marokko-grid {
     display: grid;
 
-    gap: 1.25rem;
+    gap: 2rem;
 
-    align-items: stretch;
+    align-items: center;
 }
 
 
-.photo-card,
-.story-card,
-.video-card,
-.editorial-panel {
-    background: var(--color-white);
+.marokko-copy {
+    align-self: center;
+}
 
-    color: var(--color-ink);
+
+.section--marokko .placeholder-label {
+    color: var(--color-sand);
+}
+
+
+.text-slot--marokko {
+    color: var(--color-paper-deep);
+}
+
+
+/* MEERBILD ----------------------------------------------------- */
+
+.photo-card--marokko {
+    overflow: hidden;
+
+    margin: 0;
+
+    background: var(--color-white);
 
     box-shadow: var(--shadow-strong);
 }
 
 
-.photo-card {
-    overflow: hidden;
-}
+.photo-card--marokko img {
+    display: block;
 
-
-.photo-card img {
     width: 100%;
-    height: 100%;
+    height: auto;
 
-    min-height: 18rem;
+    aspect-ratio: 4 / 3;
 
     object-fit: cover;
 }
 
 
-.photo-card figcaption {
+.photo-card--marokko figcaption {
     padding:
         0.75rem
         1rem
@@ -570,36 +532,6 @@
 
     font-size: 0.9rem;
 }
-
-
-.story-card {
-    position: relative;
-
-    overflow: hidden;
-
-    padding:
-        clamp(1.6rem, 3vw, 2.5rem);
-}
-
-
-.story-card::after {
-    position: absolute;
-
-    right: -4rem;
-    bottom: -4rem;
-
-    width: 11rem;
-    height: 11rem;
-
-    border:
-        1.15rem solid rgba(217, 179, 108, 0.15);
-
-    border-radius: 50%;
-
-    content: "";
-}
-
-
 
 /* ============================================================= */
 /* 03 AMAZIGH                                                    */
@@ -633,9 +565,6 @@
     width: 100%;
 
     padding: 1rem;
-
-    border-top:
-        0.35rem solid var(--color-sand);
 }
 
 
@@ -657,9 +586,6 @@
     padding: 1.4rem;
 
     background: var(--color-white);
-
-    border-top:
-        0.35rem solid var(--color-red);
 
     box-shadow: var(--shadow-soft);
 }
@@ -734,23 +660,12 @@
     margin: 0;
 }
 
-
 .identity-flag img {
     display: block;
 
     width: 100%;
     height: auto;
 }
-
-
-.identity-flag img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-}
-
-
 
 /* ============================================================= */
 /* PDF DOWNLOAD                                                  */
@@ -892,19 +807,16 @@
         grid-column: 2;
     }
 
-
-
     /* Marokko */
 
     .marokko-grid {
-        grid-template-columns:
-            minmax(11rem, 0.72fr)
-            minmax(20rem, 1.35fr)
-            minmax(11rem, 0.72fr);
+    grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(19rem, 0.85fr);
+
+    align-items: center;
     }
-
-
-
+    
     /* Amazigh */
 
     .amazigh-grid {
@@ -938,32 +850,10 @@
 /* ============================================================= */
 
 @media screen and (min-width: 70rem) {
-
-    .photo-card--left {
-        transform: translateY(2rem);
-    }
-
-
     .video-card {
         grid-column: 1 / -1;
 
         width: 100%;
-    }
-
-}
-/* ============================================================= */
-/* BARRIEREARME BEWEGUNG                                        */
-/* ============================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-
-    .photo-card--left {
-        transform: none;
     }
 
 }
