@@ -1,0 +1,46 @@
+/* 4. Ebene der CSS-Kaskade: Druckansicht */
+@media print {
+    body {
+        background: #ffffff;
+        color: #000000;
+        font-size: 11pt;
+    }
+
+    .skip-link,
+    .main-nav,
+    audio,
+    video,
+    canvas,
+    button,
+    .hero-decoration {
+        display: none;
+    }
+
+    .site-header,
+    .section--marokko,
+    .section--migration,
+    .section--download,
+    .site-footer {
+        background: #ffffff;
+        color: #000000;
+    }
+
+    .section,
+    .site-footer {
+        width: 100%;
+        padding: 1.2rem 0;
+    }
+
+    .photo-card,
+    .story-card,
+    .video-card,
+    .editorial-panel,
+    a {
+        color: #000000;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.85em;
+    }
+}

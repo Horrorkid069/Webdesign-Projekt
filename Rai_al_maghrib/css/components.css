@@ -13,7 +13,22 @@
 
     padding: 1.25rem;
 
-    background: var(--color-ink);
+    background:
+        radial-gradient(
+            circle at 82% 14%,
+            rgba(217, 179, 108, 0.58),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 92% 74%,
+            rgba(47, 127, 121, 0.28),
+            transparent 19%
+        ),
+        linear-gradient(
+            145deg,
+            var(--color-green),
+            var(--color-ink) 72%
+        );
 
     color: var(--color-white);
 }
@@ -246,7 +261,12 @@
 
 .section--rai {
     background:
-        var(--color-paper-deep);
+        radial-gradient(
+            circle at 8% 100%,
+            rgba(217, 179, 108, 0.18),
+            transparent 25%
+        ),
+        var(--color-paper);
 }
 
 
