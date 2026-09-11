@@ -1,53 +1,65 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    const audio = document.getElementById("raiAudio");
-    const canvas = document.getElementById("audioCanvas");
+    const audio =
+        document.getElementById("raiAudio");
+
+    const canvas =
+        document.getElementById("audioCanvas");
 
     if (!audio || !canvas) {
         return;
     }
 
-    const ctx = canvas.getContext("2d");
+    const ctx =
+        canvas.getContext("2d");
+
 
     /*
-     * ECHTE RMS-AMPLITUDENWERTE
-     * aus cest_toi_que_jaime.wav
+     * Echte Amplitudenwerte der
+     * 20-Sekunden-Audiodatei.
      *
-     * 180 Zeitabschnitte
+     * 80 Werte = ca. 0,25 Sekunden
+     * pro Balken.
      */
     const waveformData = [
-        0.414, 0.569, 0.575, 0.550, 0.585, 0.525, 0.573, 0.665, 0.742, 0.709, 0.783, 0.738,
-        0.662, 0.686, 0.607, 0.696, 0.647, 0.720, 0.694, 0.631, 0.649, 0.765, 0.689, 0.824,
-        0.744, 0.815, 0.747, 0.788, 0.851, 0.857, 0.935, 0.900, 0.910, 0.785, 0.782, 0.637,
-        0.669, 0.727, 0.781, 0.667, 0.708, 0.749, 0.558, 0.459, 0.558, 0.575, 0.584, 0.570,
-        0.550, 0.691, 0.670, 0.790, 0.799, 0.679, 0.762, 0.821, 0.887, 0.802, 0.838, 0.796,
-        0.807, 0.779, 0.762, 0.622, 0.687, 0.638, 0.767, 0.716, 0.779, 0.826, 0.660, 0.560,
-        0.560, 0.683, 0.599, 0.633, 0.633, 0.695, 0.674, 0.754, 0.757, 0.820, 0.715, 0.816,
-        0.782, 0.836, 0.838, 0.831, 0.945, 0.811, 0.832, 0.638, 0.731, 0.668, 0.808, 0.732,
-        0.766, 0.689, 0.658, 0.353, 0.341, 0.430, 0.465, 0.428, 0.455, 0.670, 0.602, 0.634,
-        0.695, 0.725, 0.710, 0.846, 0.729, 0.619, 0.636, 0.655, 0.633, 0.658, 0.670, 0.826,
-        0.833, 0.869, 0.849, 1.000, 0.886, 0.754, 0.754, 0.684, 0.623, 0.684, 0.729, 0.757,
-        0.665, 0.693, 0.594, 0.607, 0.618, 0.662, 0.690, 0.613, 0.693, 0.871, 0.730, 0.831,
-        0.694, 0.796, 0.777, 0.869, 0.942, 0.765, 0.881, 0.876, 0.817, 0.777, 0.770, 0.668,
-        0.669, 0.799, 0.713, 0.727, 0.685, 0.714, 0.605, 0.642, 0.668, 0.613, 0.653, 0.618,
-        0.753, 0.695, 0.693, 0.859, 0.861, 0.869, 0.668, 0.232, 0.043, 0.004, 0.000, 0.000
+        0.000, 0.624, 0.617, 0.326, 0.316, 0.211, 0.263, 0.219,
+        0.683, 0.640, 0.433, 0.549, 0.442, 0.226, 0.250, 0.737,
+        0.662, 0.436, 0.444, 0.371, 0.275, 0.346, 0.732, 0.734,
+        0.421, 0.469, 0.456, 0.404, 0.507, 0.526, 0.692, 0.500,
+        0.498, 0.381, 0.372, 0.594, 0.688, 0.586, 0.615, 0.483,
+        0.400, 0.313, 0.556, 0.680, 0.502, 0.405, 0.417, 0.324,
+        0.303, 0.718, 0.692, 0.446, 0.576, 0.494, 0.468, 0.512,
+        0.722, 0.683, 0.630, 0.854, 0.408, 0.242, 0.556, 0.795,
+        0.718, 0.675, 0.882, 0.608, 0.414, 0.498, 0.814, 0.721,
+        0.675, 0.659, 0.342, 0.261, 0.529, 1.000, 0.892, 0.711
     ];
+
 
     let animationId = null;
 
 
     function zeichneWaveform() {
 
-        const breite = canvas.width;
-        const hoehe = canvas.height;
+        const breite =
+            canvas.width;
 
-        ctx.clearRect(0, 0, breite, hoehe);
+        const hoehe =
+            canvas.height;
+
+
+        ctx.clearRect(
+            0,
+            0,
+            breite,
+            hoehe
+        );
 
 
         /*
          * Hintergrund
          */
-        ctx.fillStyle = "#f3f0e8";
+        ctx.fillStyle =
+            "#f3f0e8";
 
         ctx.fillRect(
             0,
@@ -58,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Wiedergabefortschritt bestimmen
+         * Fortschritt zwischen 0 und 1
          */
         let fortschritt = 0;
 
@@ -67,13 +79,11 @@ document.addEventListener("DOMContentLoaded", function () {
             audio.duration > 0
         ) {
             fortschritt =
-                audio.currentTime / audio.duration;
+                audio.currentTime /
+                audio.duration;
         }
 
 
-        /*
-         * Der aktuelle Balken
-         */
         const aktuellerBalken =
             Math.floor(
                 fortschritt *
@@ -81,14 +91,12 @@ document.addEventListener("DOMContentLoaded", function () {
             );
 
 
-        /*
-         * Zeichenbereich
-         */
         const rand = 10;
-        const abstand = 2;
+        const abstand = 4;
 
         const nutzbareBreite =
-            breite - (rand * 2);
+            breite -
+            rand * 2;
 
 
         const barWidth =
@@ -102,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         const maximaleHoehe =
-            hoehe * 0.78;
+            hoehe * 0.75;
 
 
         const mitte =
@@ -110,8 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /*
-         * Alle echten Amplituden
-         * zeichnen
+         * Amplituden zeichnen
          */
         for (
             let i = 0;
@@ -123,15 +130,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 waveformData[i];
 
 
-            /*
-             * Minimale Höhe von 2 Pixeln,
-             * damit auch sehr leise Stellen
-             * sichtbar bleiben.
-             */
             const barHeight =
                 Math.max(
                     2,
-                    amplitude * maximaleHoehe
+                    amplitude *
+                    maximaleHoehe
                 );
 
 
@@ -152,18 +155,24 @@ document.addEventListener("DOMContentLoaded", function () {
             /*
              * Bereits abgespielt
              */
-            if (i < aktuellerBalken) {
+            if (
+                i < aktuellerBalken
+            ) {
 
-                ctx.fillStyle = "#9d2d2d";
+                ctx.fillStyle =
+                    "#9d2d2d";
 
             }
 
             /*
-             * Aktueller Abschnitt
+             * Aktuelle Position
              */
-            else if (i === aktuellerBalken) {
+            else if (
+                i === aktuellerBalken
+            ) {
 
-                ctx.fillStyle = "#1f6653";
+                ctx.fillStyle =
+                    "#1f6653";
 
             }
 
@@ -172,24 +181,29 @@ document.addEventListener("DOMContentLoaded", function () {
              */
             else {
 
-                ctx.fillStyle = "#c8c3ba";
+                ctx.fillStyle =
+                    "#c8c3ba";
             }
 
 
             ctx.fillRect(
                 x,
                 y,
-                Math.max(1, barWidth),
+                Math.max(
+                    1,
+                    barWidth
+                ),
                 barHeight
             );
         }
 
 
         /*
-         * Bewegliche Linie für die
-         * aktuelle Wiedergabeposition
+         * Bewegliche Positionslinie
          */
-        if (fortschritt > 0) {
+        if (
+            fortschritt > 0
+        ) {
 
             const positionX =
                 rand +
@@ -211,9 +225,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /*
-     * Animation während der Song läuft
-     */
     function animation() {
 
         zeichneWaveform();
@@ -232,33 +243,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /*
-     * PLAY
-     */
     audio.addEventListener(
         "play",
         function () {
 
-            if (animationId !== null) {
+            if (
+                animationId !== null
+            ) {
 
                 cancelAnimationFrame(
                     animationId
                 );
             }
+
 
             animation();
         }
     );
 
 
-    /*
-     * PAUSE
-     */
     audio.addEventListener(
         "pause",
         function () {
 
-            if (animationId !== null) {
+            if (
+                animationId !== null
+            ) {
 
                 cancelAnimationFrame(
                     animationId
@@ -267,54 +277,35 @@ document.addEventListener("DOMContentLoaded", function () {
                 animationId = null;
             }
 
+
             zeichneWaveform();
         }
     );
 
 
-    /*
-     * Wenn der Benutzer im Song springt
-     */
     audio.addEventListener(
         "seeked",
         zeichneWaveform
     );
 
 
-    /*
-     * Metadaten wurden geladen
-     */
     audio.addEventListener(
         "loadedmetadata",
         zeichneWaveform
     );
 
 
-    /*
-     * Song beendet
-     */
     audio.addEventListener(
         "ended",
         function () {
 
-            if (animationId !== null) {
-
-                cancelAnimationFrame(
-                    animationId
-                );
-
-                animationId = null;
-            }
+            animationId = null;
 
             zeichneWaveform();
         }
     );
 
 
-    /*
-     * Canvas beim Öffnen der Website
-     * direkt anzeigen
-     */
     zeichneWaveform();
 
 });
