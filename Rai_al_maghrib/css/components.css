@@ -13,34 +13,22 @@
 
     padding: 1.25rem;
 
-    background:
-        radial-gradient(
-            circle at 82% 14%,
-            rgba(217, 179, 108, 0.58),
-            transparent 24%
-        ),
-        radial-gradient(
-            circle at 92% 74%,
-            rgba(47, 127, 121, 0.28),
-            transparent 19%
-        ),
-        linear-gradient(
-            145deg,
-            var(--color-green),
-            var(--color-ink) 72%
-        );
+    background: var(--color-ink);
 
     color: var(--color-white);
 }
+
 
 
 .site-header__inner,
 .main-nav,
 .section,
 .site-footer {
-    width: min(100%, var(--content-width));
+    width: 100%;
+    max-width: var(--content-width);
 
-    margin-inline: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -260,13 +248,7 @@
 /* ============================================================= */
 
 .section--rai {
-    background:
-        radial-gradient(
-            circle at 8% 100%,
-            rgba(217, 179, 108, 0.18),
-            transparent 25%
-        ),
-        var(--color-paper);
+    background: var(--color-paper-deep);
 }
 
 
@@ -454,24 +436,13 @@
 /* 02 MAROKKO                                                    */
 /* ============================================================= */
 .section--marokko {
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(217, 179, 108, 0.14),
-            transparent 18%
-        ),
-        linear-gradient(
-            150deg,
-            var(--color-ink),
-            var(--color-green-deep)
-        );
+    background: var(--color-green-deep);
 
     color: var(--color-white);
 
     border-bottom-color:
         var(--color-dark-border);
 }
-
 
 .marokko-grid {
     display: grid;
@@ -569,7 +540,15 @@
 
 
 .video-card video {
+    /*musste die 16:9 Skallierung sicherstellen */
+    display: block;
+
     width: 100%;
+    max-width: none;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
 
     margin-top: 1rem;
 }
@@ -613,15 +592,8 @@
 /* ============================================================= */
 
 .section--migration {
-    background:
-        linear-gradient(
-            135deg,
-            rgba(217, 179, 108, 0.28),
-            transparent 44%
-        ),
-        var(--color-paper-deep);
+    background: var(--color-migration);
 }
-
 
 .migration-layout {
     display: grid;
@@ -678,17 +650,10 @@
 
     align-items: center;
 
-    background:
-        radial-gradient(
-            circle at 85% 10%,
-            rgba(255, 255, 255, 0.22),
-            transparent 24%
-        ),
-        var(--color-sand);
+    background: var(--color-sand);
 
     border-bottom: 0;
 }
-
 
 .section--download .section-kicker {
     color: var(--color-green-deep);
