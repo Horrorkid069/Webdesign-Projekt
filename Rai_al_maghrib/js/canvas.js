@@ -13,14 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const ctx =
         canvas.getContext("2d");
 
-
-    /*
-     * Echte Amplitudenwerte der
-     * 20-Sekunden-Audiodatei.
-     *
-     * 80 Werte = ca. 0,25 Sekunden
-     * pro Balken.
-     */
     const waveformData = [
         0.000, 0.624, 0.617, 0.326, 0.316, 0.211, 0.263, 0.219,
         0.683, 0.640, 0.433, 0.549, 0.442, 0.226, 0.250, 0.737,
@@ -54,10 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
             hoehe
         );
 
-
-        /*
-         * Hintergrund
-         */
         ctx.fillStyle =
             "#f3f0e8";
 
@@ -69,9 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /*
-         * Fortschritt zwischen 0 und 1
-         */
+
         let fortschritt = 0;
 
         if (
@@ -117,9 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
             hoehe / 2;
 
 
-        /*
-         * Amplituden zeichnen
-         */
+        
+          //Amplituden zeichnen
+        
         for (
             let i = 0;
             i < waveformData.length;
